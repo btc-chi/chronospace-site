@@ -185,6 +185,11 @@ body::after {
     animation: heroFadeIn 2s ease-out;
     text-align: center;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -5vh;
 }
 
 .logo {
