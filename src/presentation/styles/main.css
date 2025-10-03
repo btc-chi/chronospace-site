@@ -684,6 +684,12 @@ a:hover {
     margin-right: auto;
 }
 
+@media (max-width: 768px) {
+    .shape-future-section {
+        padding-bottom: 1rem;
+    }
+}
+
 .final-intro {
     margin-bottom: 4rem;
     font-size: clamp(1.1rem, 2.5vw, 1.3rem);
@@ -841,6 +847,12 @@ a:hover {
     position: relative;
     z-index: 2;
     margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        margin-top: 2rem;
+    }
 }
 
 .footer-divider {
