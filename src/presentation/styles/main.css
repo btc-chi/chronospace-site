@@ -192,6 +192,16 @@ body::after {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+.hero-tagline .mobile-break {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hero-tagline .mobile-break {
+        display: inline;
+    }
+}
+
 .hero-subtitle {
     font-size: clamp(1rem, 2.5vw, 1.2rem);
     font-weight: 300;
@@ -258,7 +268,7 @@ h3.intro-highlight {
 
 @media (max-width: 768px) {
     .section-subheading {
-        white-space: nowrap;
+        max-width: 100%;
     }
 }
 
@@ -624,7 +634,7 @@ a:hover {
 
 @media (max-width: 768px) {
     .final-intro {
-        white-space: nowrap;
+        max-width: 100%;
     }
 }
 
