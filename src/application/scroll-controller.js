@@ -63,19 +63,20 @@ class ScrollController {
         }
 
         // Hero parallax effect - disable on mobile to prevent jittery scrolling
-        if (this.hero && !isMobile) {
+        if (this.hero) {
             const heroContent = this.hero.querySelector('.hero-content');
-            const translateY = scrollY * 0.5;
             const opacity = Math.max(0, 1 - (scrollY / windowHeight));
 
-            heroContent.style.transform = `translateY(${translateY}px)`;
-            heroContent.style.opacity = opacity;
-        } else if (this.hero && isMobile) {
-            // On mobile, just fade out without parallax transform
-            const heroContent = this.hero.querySelector('.hero-content');
-            const opacity = Math.max(0, 1 - (scrollY / windowHeight));
-            heroContent.style.transform = 'translateY(0)';
-            heroContent.style.opacity = opacity;
+            if (!isMobile) {
+                // Desktop: parallax + fade
+                const translateY = scrollY * 0.5;
+                heroContent.style.transform = `translateY(${translateY}px)`;
+                heroContent.style.opacity = opacity;
+            } else {
+                // Mobile: just fade out without parallax transform
+                heroContent.style.transform = 'none';
+                heroContent.style.opacity = opacity;
+            }
         }
     }
 
