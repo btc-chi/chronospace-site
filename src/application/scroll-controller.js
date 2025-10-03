@@ -15,8 +15,9 @@ class ScrollController {
     }
 
     bindEvents() {
-        window.addEventListener('scroll', this.handleScroll.bind(this));
-        window.addEventListener('scroll', this.updateScrollIndicator.bind(this));
+        // Use passive event listeners for better scroll performance on mobile
+        window.addEventListener('scroll', this.handleScroll.bind(this), { passive: true });
+        window.addEventListener('scroll', this.updateScrollIndicator.bind(this), { passive: true });
 
         // Add click handler for scroll arrow
         if (this.scrollArrow) {
@@ -42,6 +43,7 @@ class ScrollController {
     handleScroll() {
         const scrollY = window.scrollY;
         const windowHeight = window.innerHeight;
+        const isMobile = window.innerWidth <= 768;
 
         // Fade out scroll arrow quickly (before hero content)
         if (this.scrollArrow) {
@@ -60,13 +62,19 @@ class ScrollController {
             }
         }
 
-        // Hero parallax effect
-        if (this.hero) {
+        // Hero parallax effect - disable on mobile to prevent jittery scrolling
+        if (this.hero && !isMobile) {
             const heroContent = this.hero.querySelector('.hero-content');
             const translateY = scrollY * 0.5;
             const opacity = Math.max(0, 1 - (scrollY / windowHeight));
 
             heroContent.style.transform = `translateY(${translateY}px)`;
+            heroContent.style.opacity = opacity;
+        } else if (this.hero && isMobile) {
+            // On mobile, just fade out without parallax transform
+            const heroContent = this.hero.querySelector('.hero-content');
+            const opacity = Math.max(0, 1 - (scrollY / windowHeight));
+            heroContent.style.transform = 'translateY(0)';
             heroContent.style.opacity = opacity;
         }
     }
