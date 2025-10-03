@@ -26,6 +26,7 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    background: #000000;
 }
 
 body {
@@ -42,6 +43,7 @@ body {
     overflow-x: hidden;
     position: relative;
     min-height: 100vh;
+    min-height: -webkit-fill-available;
 }
 
 @media (max-width: 768px) {
