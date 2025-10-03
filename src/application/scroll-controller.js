@@ -3,7 +3,9 @@ class ScrollController {
         this.scrollIndicator = document.querySelector('.scroll-indicator');
         this.sections = document.querySelectorAll('section');
         this.hero = document.querySelector('.hero');
-        
+        this.scrollArrow = document.querySelector('.scroll-indicator-arrow');
+        this.heroCtaBtn = document.querySelector('#hero-connect-btn');
+
         this.init();
     }
 
@@ -15,19 +17,55 @@ class ScrollController {
     bindEvents() {
         window.addEventListener('scroll', this.handleScroll.bind(this));
         window.addEventListener('scroll', this.updateScrollIndicator.bind(this));
+
+        // Add click handler for scroll arrow
+        if (this.scrollArrow) {
+            this.scrollArrow.addEventListener('click', () => {
+                window.scrollTo({
+                    top: window.innerHeight,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Add click handler for hero CTA button - scroll to final CTA
+        if (this.heroCtaBtn) {
+            this.heroCtaBtn.addEventListener('click', () => {
+                const finalSection = document.querySelector('.shape-future-section');
+                if (finalSection) {
+                    finalSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
     }
 
     handleScroll() {
         const scrollY = window.scrollY;
         const windowHeight = window.innerHeight;
-        
-        
+
+        // Fade out scroll arrow quickly (before hero content)
+        if (this.scrollArrow) {
+            const arrowOpacity = Math.max(0, 1 - (scrollY / 200)); // Fades out in first 200px
+            this.scrollArrow.style.opacity = arrowOpacity;
+        }
+
+        // Fade out hero CTA button as user scrolls (disappears after hero section)
+        if (this.heroCtaBtn) {
+            const ctaOpacity = Math.max(0, 1 - (scrollY / (windowHeight * 0.5))); // Fades out halfway through hero
+            this.heroCtaBtn.style.opacity = ctaOpacity;
+            if (ctaOpacity === 0) {
+                this.heroCtaBtn.style.pointerEvents = 'none';
+            } else {
+                this.heroCtaBtn.style.pointerEvents = 'auto';
+            }
+        }
+
         // Hero parallax effect
         if (this.hero) {
             const heroContent = this.hero.querySelector('.hero-content');
             const translateY = scrollY * 0.5;
             const opacity = Math.max(0, 1 - (scrollY / windowHeight));
-            
+
             heroContent.style.transform = `translateY(${translateY}px)`;
             heroContent.style.opacity = opacity;
         }
@@ -59,6 +97,44 @@ class ScrollController {
 
         this.sections.forEach(section => {
             observer.observe(section);
+        });
+
+        // Setup fade effect for final CTA
+        this.setupFinalCtaFade();
+    }
+
+    setupFinalCtaFade() {
+        const finalSection = document.querySelector('.shape-future-section');
+        if (!finalSection) return;
+
+        const fadeSections = [
+            document.querySelector('.manifesto-section'),
+            document.querySelector('.applications-section'),
+            document.querySelector('.leadership-section'),
+            document.querySelector('.learn-more-section')
+        ].filter(Boolean);
+
+        window.addEventListener('scroll', () => {
+            const finalSectionTop = finalSection.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            const triggerPoint = windowHeight * 0.7; // Start fading when final section is 70% visible
+
+            if (finalSectionTop < triggerPoint) {
+                // Calculate fade intensity based on scroll position
+                const fadeProgress = Math.max(0, Math.min(1, (triggerPoint - finalSectionTop) / 300));
+
+                fadeSections.forEach(section => {
+                    if (fadeProgress > 0.3) {
+                        section.classList.add('fade-out');
+                    } else {
+                        section.classList.remove('fade-out');
+                    }
+                });
+            } else {
+                fadeSections.forEach(section => {
+                    section.classList.remove('fade-out');
+                });
+            }
         });
     }
 

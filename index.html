@@ -15,6 +15,7 @@
     
     <!-- Hero Section -->
     <section class="hero" id="hero">
+        <button class="hero-cta-btn" id="hero-connect-btn">Connect</button>
         <div class="hero-content">
             <div class="logo">
                 <img src="assets/images/logo-white.svg" alt="ChronoSpace AI" class="logo-svg">
@@ -22,6 +23,11 @@
             <div class="hero-tagline">
                 <h2>The First Geometry-Native Foundation Model for Reality</h2>
             </div>
+        </div>
+        <div class="scroll-indicator-arrow">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5V19M12 19L7 14M12 19L17 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </div>
     </section>
 
@@ -31,14 +37,14 @@
             
             <section class="manifesto-section">
                 <div class="text-block">
-                    <h3 class="section-intro intro-highlight">AI is blind. We're giving it eyes.</h3>
+                    <h3 class="section-intro intro-highlight">AI is blind to reality. We're giving it eyes.</h3>
 
                     <p>
-                        Today's vision models are trained on flat pixels. They hallucinate depth, break down on interaction, and collapse in <span class="highlight">mission-critical domains</span> — where <span class="highlight">fidelity, geometry, and temporal accuracy</span> are non-negotiable.
+                        Today's vision models are trained on flat 2D pixels. They struggle to understand depth, motion, and physics essential for <span class="highlight">mission-critical domains</span> where <span class="highlight">fidelity and temporal accuracy</span> are non-negotiable.
                     </p>
 
                     <p>
-                        The answer is geometry.
+                        The answer is <span class="highlight">geometry</span>.
                     </p>
 
                     <p>
@@ -46,7 +52,7 @@
                     </p>
 
                     <p>
-                        Our North Star is clear: to <span class="highlight">reconstruct highly realistic, dynamic 4D scenes from sparse inputs</span> — a single or few cameras — with the fidelity required for mission-critical deployment.
+                        Our North Star is clear: <span class="highlight">reconstruct highly realistic, dynamic 4D scenes from sparse inputs</span> — a single or few cameras — with the fidelity required for mission-critical deployment.
                     </p>
 
                     <p>
@@ -54,43 +60,43 @@
                     </p>
 
                     <p class="closing-statement">
-                        Geometry-native 4D data unlocks Spatial AI.
+                        Geometry-native data unlocks Spatial AI.
                     </p>
                 </div>
             </section>
 
             <section class="applications-section">
                 <h3>Applications</h3>
-                <p class="section-subheading">Mission-Critical Applications Demand Spatial Intelligence</p>
+                <p class="section-subheading">Mission-critical domains demand spatial intelligence</p>
                 <div class="text-block">
                     <div class="applications-list">
                         <div class="collapsible-item">
-                            <button class="collapse-trigger" data-target="robotics-content">
+                            <button class="collapse-trigger collapsed" data-target="robotics-content">
                                 <span class="item-title">Robotics</span>
-                                <span class="collapse-icon">−</span>
+                                <span class="collapse-icon">+</span>
                             </button>
-                            <div class="collapsible-content open" id="robotics-content">
-                                <p>Robots are trained on 4D reconstructions of real human workflows, using geometry-native <span class="highlight">content</span> that captures affordances and motion patterns with physics built in. The same reconstructions become <span class="highlight">high-fidelity simulation environments</span>, enabling testing and validation before deployment and closing the <span class="highlight">sim-to-real gap</span>.</p>
+                            <div class="collapsible-content" id="robotics-content">
+                                <p>Robots train on 4D reconstructions of human workflows, using geometry-native <span class="highlight">content</span> that captures affordances and motion patterns with physics built in. These reconstructions also serve as <span class="highlight">high-fidelity simulation environments</span>, enabling validation before deployment and closing the <span class="highlight">sim-to-real gap</span>.</p>
                             </div>
                         </div>
 
                         <div class="collapsible-item">
-                            <button class="collapse-trigger" data-target="defense-content">
+                            <button class="collapse-trigger collapsed" data-target="defense-content">
                                 <span class="item-title">Defense</span>
-                                <span class="collapse-icon">−</span>
+                                <span class="collapse-icon">+</span>
                             </button>
-                            <div class="collapsible-content open" id="defense-content">
-                                <p>Analysts re-enter drone footage for battlefield <span class="highlight">situational awareness</span>, transform CCTV into explorable 4D reconstructions for security and threat analysis, while immersive 4D reconstructions <span class="highlight">train personnel</span> across missions, logistics, and equipment maintenance.</p>
+                            <div class="collapsible-content" id="defense-content">
+                                <p>Analysts transform drone footage into battlefield 4D reconstructions for <span class="highlight">situational awareness</span> and threat analysis. CCTV becomes explorable geometry-native security environments, while immersive 4D scenes <span class="highlight">train personnel</span> across missions, logistics, and equipment.</p>
                             </div>
                         </div>
 
                         <div class="collapsible-item">
-                            <button class="collapse-trigger" data-target="industrial-content">
+                            <button class="collapse-trigger collapsed" data-target="industrial-content">
                                 <span class="item-title">Industrial</span>
-                                <span class="collapse-icon">−</span>
+                                <span class="collapse-icon">+</span>
                             </button>
-                            <div class="collapsible-content open" id="industrial-content">
-                                <p>4D reconstructions create <span class="highlight">geometry-native real-world digital twins</span> — from factory floors to warehouses and construction sites — enabling optimization, safety checks, and automation that pixels or CAD can't deliver. These same high-fidelity scenes can be replayed to test new layouts, validate automation systems, and improve safety before changes are deployed.</p>
+                            <div class="collapsible-content" id="industrial-content">
+                                <p>4D reconstructions create <span class="highlight">geometry-native digital twins</span> of factory floors, warehouses, and construction sites. They enable optimization, safety checks, and automation that pixels or CAD can't deliver. High-fidelity scenes can be replayed to test layouts, validate automation, and improve safety before deployment.</p>
                             </div>
                         </div>
                     </div>
@@ -101,68 +107,77 @@
                 <h3>Leadership</h3>
                 <div class="text-block">
                     <p>
-                        Our team combines <span class="highlight">proven track records</span>. <a href="https://www.linkedin.com/in/paulwalborsky/" target="_blank" rel="noopener">Paul Walborsky</a> built AI.Reverie, a pioneer in <span class="highlight">synthetic data for computer vision</span>, <a href="https://venturebeat.com/business/facebook-quietly-acquires-synthetic-data-startup-ai-reverie" target="_blank" rel="noopener">acquired by Meta in 2021</a>. <a href="https://srinathsridhar.com/" target="_blank" rel="noopener">Srinath Sridhar</a>, co-founder and CEO, is a Professor of Computer Science at Brown University and head of the Interactive 3D Vision Lab. Our breakthroughs in <span class="highlight">geometry-native AI</span> have been published at <a href="https://aashishrai3799.github.io/uvgs/" target="_blank" rel="noopener">CVPR</a>, <a href="https://papers.nips.cc/paper_files/paper/2019/hash/86e8f7ab32cfd12577bc2619bc635690-Abstract.html" target="_blank" rel="noopener">NeurIPS</a>, and <a href="https://vcai.mpi-inf.mpg.de/projects/VNect/" target="_blank" rel="noopener">SIGGRAPH</a> — and now we're <span class="highlight">turning research into reality</span>.
+                        Our team combines <span class="highlight">proven track records</span>. <a href="https://www.linkedin.com/in/paulwalborsky/" target="_blank" rel="noopener">Paul Walborsky</a> built AI.Reverie, a pioneer in <span class="highlight">synthetic data for computer vision</span>, <a href="https://venturebeat.com/business/facebook-quietly-acquires-synthetic-data-startup-ai-reverie" target="_blank" rel="noopener">acquired by Meta in 2021</a>. <a href="https://srinathsridhar.com/" target="_blank" rel="noopener">Srinath Sridhar</a>, co-founder and CEO, is Professor of Computer Science at Brown University and head of the Interactive 3D Vision Lab. Our breakthroughs in <span class="highlight">geometry-native AI</span> have been published at <a href="https://aashishrai3799.github.io/uvgs/" target="_blank" rel="noopener">CVPR</a>, <a href="https://papers.nips.cc/paper_files/paper/2019/hash/86e8f7ab32cfd12577bc2619bc635690-Abstract.html" target="_blank" rel="noopener">NeurIPS</a>, and <a href="https://vcai.mpi-inf.mpg.de/projects/VNect/" target="_blank" rel="noopener">SIGGRAPH</a> — and now we're <span class="highlight">turning research into reality</span>.
                     </p>
                 </div>
             </section>
 
             <section class="learn-more-section">
                 <h3>Learn More</h3>
+                <p class="section-subheading">Dive deeper into the foundations and applications of geometry-native AI</p>
                 <div class="text-block">
-                    <p>
-                        Dive deeper into the foundations and applications of geometry-native AI through our thought leadership.
-                    </p>
 
-                    <div class="reading-articles">
-                        <a href="#" target="_blank" class="article-link">
-                            <span class="article-title">Geometry Is What You Need</span>
-                            <span class="article-description">How real-world 4D data unlocks true spatial intelligence</span>
-                        </a>
-                        <a href="#" target="_blank" class="article-link">
-                            <span class="article-title">AI Is Blind to Reality</span>
-                            <span class="article-description">Why pixel-based models fail in mission-critical domains</span>
-                        </a>
+                    <div class="article-grid">
+                        <article class="article-card">
+                            <a href="https://www.linkedin.com/pulse/geometry-what-you-need-raw-material-power-next-ai-wave-paul-walborsky-zkjwc/?trackingId=V1bhFYg%2FQ6i6I9uF%2BHCFqQ%3D%3D" target="_blank" rel="noopener" class="article-card-link">
+                                <div class="article-thumbnail">
+                                    <img src="assets/images/thumb-geo.png" alt="Geometry Is What You Need">
+                                </div>
+                                <div class="article-content">
+                                    <h4 class="article-title">Geometry Is What You Need</h4>
+                                    <p class="article-description">How real-world 4D data unlocks true spatial intelligence</p>
+                                    <div class="article-meta">
+                                        <span class="article-author">Paul Walborsky</span>
+                                        <span class="article-date">August 7, 2025</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="article-card">
+                            <a href="https://www.linkedin.com/pulse/geometry-what-you-need-raw-material-power-next-ai-wave-paul-walborsky-zkjwc/?trackingId=V1bhFYg%2FQ6i6I9uF%2BHCFqQ%3D%3D" target="_blank" rel="noopener" class="article-card-link">
+                                <div class="article-thumbnail">
+                                    <img src="assets/images/thumb-reality.png" alt="AI Is Blind. We're Giving It Eyes.">
+                                </div>
+                                <div class="article-content">
+                                    <h4 class="article-title">AI Is Blind. We're Giving It Eyes.</h4>
+                                    <p class="article-description">Why pixel-based models fail in mission-critical domains</p>
+                                    <div class="article-meta">
+                                        <span class="article-author">Paul Walborsky</span>
+                                        <span class="article-date">October 7, 2025</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
                     </div>
                 </div>
             </section>
 
             <section class="shape-future-section">
                 <h3>Shape the Future of Spatial AI</h3>
-                <div class="text-block">
-                    <p>
-                        ChronoSpace AI is building the <span class="highlight">infrastructure layer every industry will need</span>. We're inviting collaborators across two fronts:
-                    </p>
+                <p class="final-intro">
+                    ChronoSpace AI is building the <span class="highlight">infrastructure layer every industry will need</span>. We're inviting collaborators across two fronts:
+                </p>
 
-                    <div class="collaboration-list">
-                        <div class="collapsible-item">
-                            <button class="collapse-trigger" data-target="council-content">
-                                <span class="item-title">Join our Industry Council</span>
-                                <span class="collapse-icon">−</span>
-                            </button>
-                            <div class="collapsible-content open" id="council-content">
-                                <p>We are building a select group of industry leaders to help guide product direction and validate <span class="highlight">mission-critical applications</span>, join our industry council.</p>
-                            </div>
-                        </div>
-
-                        <div class="collapsible-item">
-                            <button class="collapse-trigger" data-target="build-content">
-                                <span class="item-title">Build with us</span>
-                                <span class="collapse-icon">−</span>
-                            </button>
-                            <div class="collapsible-content open" id="build-content">
-                                <p>We're hiring engineers, researchers, and operators who care about <span class="highlight">fidelity, physics, and infrastructure</span>.</p>
-                            </div>
-                        </div>
+                <div class="collaboration-grid">
+                    <div class="collaboration-item">
+                        <h4 class="collab-title">Join our Industry Council</h4>
+                        <p class="collab-description">We're assembling a select group of industry leaders to guide product direction and validate <span class="highlight">mission-critical applications</span>.</p>
                     </div>
 
-                    <div class="final-cta">
-                        <div class="cta-content">
-                            <p>Interested in shaping Spatial AI? Let's talk.</p>
-                            <button class="contact-btn primary" onclick="openEmail()">
-                                contact@chronospace.ai
-                            </button>
-                        </div>
+                    <div class="collaboration-item">
+                        <h4 class="collab-title">Build with Us</h4>
+                        <p class="collab-description">We're hiring engineers, researchers, and operators who care about <span class="highlight">fidelity, physics, and infrastructure</span>.</p>
                     </div>
+                </div>
+
+                <div class="final-separator"></div>
+
+                <div class="final-cta">
+                    <p>Interested in shaping Spatial AI? Let's talk.</p>
+                    <button class="contact-btn primary" onclick="openEmail()">
+                        contact@chronospace.ai
+                    </button>
                 </div>
             </section>
 
