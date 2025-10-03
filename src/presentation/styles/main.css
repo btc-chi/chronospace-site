@@ -256,6 +256,12 @@ h3.intro-highlight {
     margin-bottom: 1.5rem;
 }
 
+@media (max-width: 768px) {
+    .section-subheading {
+        white-space: nowrap;
+    }
+}
+
 .text-block {
     margin-bottom: 4rem;
 }
@@ -464,6 +470,12 @@ a:hover {
     text-shadow: none;
 }
 
+@media (max-width: 768px) {
+    .closing-statement {
+        white-space: nowrap;
+    }
+}
+
 /* Collaboration Types */
 .collaboration-type {
     margin-bottom: 2rem;
@@ -610,6 +622,12 @@ a:hover {
     color: var(--text-secondary);
 }
 
+@media (max-width: 768px) {
+    .final-intro {
+        white-space: nowrap;
+    }
+}
+
 .collaboration-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -632,6 +650,12 @@ a:hover {
     font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     line-height: 1.7;
     color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .collab-description {
+        white-space: normal;
+    }
 }
 
 .final-separator {
