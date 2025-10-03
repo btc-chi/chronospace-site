@@ -389,7 +389,7 @@ a:hover {
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1.2rem;
 }
 
 .collapsible-item {
@@ -432,6 +432,12 @@ a:hover {
     transition: all 0.2s ease;
     margin-left: 0.75rem;
     line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .collapse-icon {
+        margin-left: 0.5rem;
+    }
 }
 
 .collapse-trigger:hover .collapse-icon {
@@ -826,7 +832,7 @@ a:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-content {
-        padding: 1rem;
+        padding: 1rem 2rem;
     }
 
     .hero-cta-btn {
@@ -837,7 +843,8 @@ a:hover {
     }
 
     .content-container {
-        padding: 4rem 1.5rem;
+        padding: 4rem 2rem;
+        max-width: 90%;
     }
 
     .contact-actions {
